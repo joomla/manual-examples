@@ -1,2 +1,2 @@
 # manual-examples
-Examples for manual tutorials
+Source code for tutorials in the Joomla development manual.

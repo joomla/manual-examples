@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.4" client="site" method="upgrade">
+    <name>MOD_HELLO_NAME</name>
+    <version>1.0.4</version>
+    <author>me</author>
+    <creationDate>today</creationDate>
+    <description>MOD_HELLO_DESCRIPTION</description>
+    <namespace path="src">My\Module\Hello</namespace>
+    <files>
+        <filename module="mod_hello">mod_hello.php</filename>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/mod_hello.ini</language>
+        <language tag="en-GB">language/en-GB/mod_hello.sys.ini</language>
+    </languages>
+</extension>

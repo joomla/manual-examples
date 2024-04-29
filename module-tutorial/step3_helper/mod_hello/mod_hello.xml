@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="4.4" client="site" method="upgrade">
     <name>Joomla module tutorial</name>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <author>me</author>
     <creationDate>today</creationDate>
     <description>Code used in the Joomla module tutorial</description>
+    <namespace path="src">My\Module\Hello</namespace>
     <files>
         <filename module="mod_hello">mod_hello.php</filename>
+        <folder>src</folder>
+        <folder>tmpl</folder>
     </files>
 </extension>

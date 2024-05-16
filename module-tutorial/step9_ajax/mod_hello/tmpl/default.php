@@ -15,3 +15,7 @@ $greeting = "<{$h} class='mod_hello'>{$data}</{$h}>"
 ?>
 
 <?php echo $greeting; ?>
+<div>
+    <p>Number of users: <span class="mod_hello_nusers"></span></p>
+    <button onclick="count_users();">Update</button>
+</div>

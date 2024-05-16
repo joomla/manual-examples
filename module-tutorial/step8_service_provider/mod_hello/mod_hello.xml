@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>MOD_HELLO_NAME</name>
+    <version>1.0.8</version>
+    <author>me</author>
+    <creationDate>today</creationDate>
+    <description>MOD_HELLO_DESCRIPTION</description>
+    <namespace path="src">My\Module\Hello</namespace>
+    <files>
+        <folder module="mod_hello">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+    <scriptfile>script.php</scriptfile>
+    <media destination="mod_hello" folder="media">
+        <filename>joomla.asset.json</filename>
+        <folder>js</folder>
+    </media>
+    <languages>
+        <language tag="en-GB">language/en-GB/mod_hello.ini</language>
+        <language tag="en-GB">language/en-GB/mod_hello.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="header"
+                    type="list"
+                    label="MOD_HELLO_HEADER_LEVEL"
+                    >
+                    <option value="h3">MOD_HELLO_HEADER_LEVEL_3</option>
+                    <option value="h4">MOD_HELLO_HEADER_LEVEL_4</option>
+                    <option value="h5">MOD_HELLO_HEADER_LEVEL_5</option>
+                    <option value="h6">MOD_HELLO_HEADER_LEVEL_6</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

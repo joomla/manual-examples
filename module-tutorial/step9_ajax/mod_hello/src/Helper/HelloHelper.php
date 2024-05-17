@@ -8,7 +8,6 @@ use Joomla\CMS\Factory;
 use Joomla\Registry\Registry;
 use Joomla\Database\DatabaseInterface;
 use Joomla\Module\Logged\Administrator\Helper\LoggedHelper;
-use Joomla\CMS\Response\JsonResponse;
 use Joomla\CMS\Language\Text;
 
 class HelloHelper

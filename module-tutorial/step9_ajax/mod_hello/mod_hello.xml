@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
     <name>MOD_HELLO_NAME</name>
-    <version>1.0.6</version>
+    <version>1.0.9</version>
     <author>me</author>
     <creationDate>today</creationDate>
     <description>MOD_HELLO_DESCRIPTION</description>
     <namespace path="src">My\Module\Hello</namespace>
     <files>
-        <filename module="mod_hello">mod_hello.php</filename>
-        <filename>helper.php</filename>
+        <folder module="mod_hello">services</folder>
         <folder>src</folder>
         <folder>tmpl</folder>
     </files>
+    <scriptfile>script.php</scriptfile>
     <media destination="mod_hello" folder="media">
         <filename>joomla.asset.json</filename>
         <folder>js</folder>

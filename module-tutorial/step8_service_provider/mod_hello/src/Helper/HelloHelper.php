@@ -2,9 +2,9 @@
 
 namespace My\Module\Hello\Site\Helper;
 
-use Joomla\CMS\Factory;
-
 \defined('_JEXEC') or die;
+
+use Joomla\CMS\Factory;
 
 class HelloHelper
 {

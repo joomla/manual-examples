@@ -7,31 +7,27 @@ jQuery(document).ready(function() {
         }
     }
 });
+
 function count_users() {
-    console.log(event.target);
     let nusers = event.target.parentElement.querySelector('span');
-    console.log(nusers);
-    request = {
-        'option' : 'com_ajax',
-        'module' : 'hello',
-        'method' : 'count',
-        'data'   : null,
-        'format' : 'json'
-        };
-    jQuery.ajax({
-    type   : 'POST',
-    data   : request,
-    success: function (response) {
-        console.log(response);
-        if (response.success) {
-            nusers.innerText = response.data;
-        } else {
-            const messages = {"error": [response.message]};
-            Joomla.renderMessages(messages);
+    Joomla.request({
+        url: 'index.php?option=com_ajax&module=hello&method=count&format=json',
+        method: 'GET',
+        onSuccess(data) {
+            const response = JSON.parse(data);
+            if (response.success) {
+                nusers.innerText = response.data;
+                const confirmation = Joomla.Text._('MOD_HELLO_AJAX_OK').replace('%s', response.data);
+                Joomla.renderMessages({'info': [confirmation]});
+            } else {
+                const messages = {"error": [response.message]};
+                Joomla.renderMessages(messages);
+            }
+        },
+        onError(xhr) {
+            Joomla.renderMessages(Joomla.ajaxErrorsMessages(xhr));
+            const response = JSON.parse(xhr.response);
+            Joomla.renderMessages({"error": [response.message]}, undefined, true);
         }
-    },
-    error: function(response) {
-        alert('Ajax call failed');
-    }
     });
 }

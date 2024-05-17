@@ -10,7 +10,7 @@
       "type": "script",
       "uri": "mod_hello/add-suffix.js",
       "dependencies": [
-        "jquery"
+        "jquery", "messages"
       ],
       "version": "1.0.0"
     } 

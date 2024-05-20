@@ -13,26 +13,26 @@ return new class () implements InstallerScriptInterface {
 
     public function install(InstallerAdapter $adapter): bool
     {
-        echo "mod_hello install<br>";
+        echo 'mod_hello install<br>';
         return true;
     }
 
     public function update(InstallerAdapter $adapter): bool
     {
 
-        echo "mod_hello update<br>";
+        echo 'mod_hello update<br>';
         return true;
     }
 
     public function uninstall(InstallerAdapter $adapter): bool
     {
-        echo "mod_hello uninstall<br>";
+        echo 'mod_hello uninstall<br>';
         return true;
     }
 
     public function preflight(string $type, InstallerAdapter $adapter): bool
     {
-        echo "mod_hello preflight<br>";
+        echo 'mod_hello preflight<br>';
         
         if (version_compare(PHP_VERSION, $this->minimumPhp, '<')) {
             Factory::getApplication()->enqueueMessage(sprintf(Text::_('JLIB_INSTALLER_MINIMUM_PHP'), $this->minimumPhp), 'error');
@@ -49,7 +49,7 @@ return new class () implements InstallerScriptInterface {
 
     public function postflight(string $type, InstallerAdapter $adapter): bool
     {
-        echo "mod_hello postflight<br>";
+        echo 'mod_hello postflight<br>';
         return true;
     }
 

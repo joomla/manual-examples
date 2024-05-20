@@ -5,9 +5,7 @@ namespace My\Module\Hello\Site\Helper;
 \defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\Registry\Registry;
 use Joomla\Database\DatabaseInterface;
-use Joomla\Module\Logged\Administrator\Helper\LoggedHelper;
 use Joomla\CMS\Language\Text;
 
 class HelloHelper
@@ -24,20 +22,23 @@ class HelloHelper
         return $default;
     }
 
-    public function countAjax() {
-
+    public function countAjax()
+    {
         $user = Factory::getApplication()->getIdentity();
-        if ($user->id == 0)  // not logged on
-        {
+
+        if ($user->id == 0) {
+            // not logged on
             throw new \Exception(Text::_('JERROR_ALERTNOAUTHOR'));
         }
-        else
-        {
-            $params = new Registry(array('count' => 0));
-            $app = Factory::getApplication();
-            $db = Factory::getContainer()->get(DatabaseInterface::class);
-            $users = LoggedHelper::getList($params, $app, $db);
-            return (string)count($users);
-        }
+
+        $db    = Factory::getContainer()->get(DatabaseInterface::class);
+        $query = $db->getQuery(true)
+            ->select('COUNT(*)')
+            ->from('#__session AS s')
+            ->where('s.guest = 0');
+
+        $db->setQuery($query);
+
+        return (string) $db->loadResult();
     }
 }

@@ -10,8 +10,12 @@
       "type": "script",
       "uri": "mod_hello/add-suffix.js",
       "dependencies": [
-        "jquery", "core", "messages"
+        "core",
+        "messages"
       ],
+      "attributes": {
+        "type": "module"
+      },
       "version": "1.1.0"
     } 
   ]

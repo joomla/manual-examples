@@ -1,11 +1,10 @@
-jQuery(document).ready(function() {
-    let arr = Joomla.getOptions('vars');
-    let hello = document.getElementsByClassName('mod_hello');
-    if (hello != null) {
-        for (let i = 0; i < hello.length; i++) {
-            hello[i].innerText = hello[i].innerText + arr['suffix'];
-        }
-    }
+if (!window.Joomla) {
+  throw new Error('Joomla API was not properly initialised');
+}
+
+const { suffix } = Joomla.getOptions('vars');
+document.querySelectorAll('.mod_hello').forEach(element => {
+  element.innerText += suffix;
 });
 
 function count_users() {

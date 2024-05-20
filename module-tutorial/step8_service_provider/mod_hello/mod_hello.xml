@@ -27,6 +27,7 @@
                     name="header"
                     type="list"
                     label="MOD_HELLO_HEADER_LEVEL"
+                    default="h4"
                     >
                     <option value="h3">MOD_HELLO_HEADER_LEVEL_3</option>
                     <option value="h4">MOD_HELLO_HEADER_LEVEL_4</option>

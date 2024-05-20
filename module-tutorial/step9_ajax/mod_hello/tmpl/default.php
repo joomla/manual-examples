@@ -22,5 +22,5 @@ Text::script('JLIB_JS_AJAX_ERROR_OTHER');
 <?php echo $greeting; ?>
 <div>
     <p><?php echo Text::_('MOD_HELLO_NUSERS'); ?><span class="mod_hello_nusers"></span></p>
-    <button onclick="count_users();"><?php echo Text::_('MOD_HELLO_UPDATE_NUSERS'); ?></button>
+    <button class="mod_hello_updateusers"><?php echo Text::_('MOD_HELLO_UPDATE_NUSERS'); ?></button>
 </div>

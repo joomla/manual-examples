@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
     <name>MOD_HELLO_NAME</name>
     <version>1.0.9</version>
@@ -27,6 +27,7 @@
                     name="header"
                     type="list"
                     label="MOD_HELLO_HEADER_LEVEL"
+                    default="h4"
                     >
                     <option value="h3">MOD_HELLO_HEADER_LEVEL_3</option>
                     <option value="h4">MOD_HELLO_HEADER_LEVEL_4</option>

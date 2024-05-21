@@ -10,8 +10,11 @@
       "type": "script",
       "uri": "mod_hello/add-suffix.js",
       "dependencies": [
-        "jquery"
+        "core"
       ],
+      "attributes": {
+        "type": "module"
+      },
       "version": "1.0.0"
     } 
   ]

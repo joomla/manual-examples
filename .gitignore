@@ -1,0 +1,11 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore the node_modules directory, where npm packages are installed
+node_modules/
+
+# Ignore Cypress screenshots
+screenshots/
+
+# ignore local copied Cypress configuration
+cypress.config.js

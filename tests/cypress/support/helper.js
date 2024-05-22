@@ -17,11 +17,16 @@ function installAndConfigure(dir, moduleName) {
    * e.g. from    /Users/hlu/Desktop/manual-examples/cypress/integration/step1_basic_module.cy.js
    * absolutePath /Users/hlu/Desktop/manual-examples/module-tutorial/step1_basic_module
    */
-  const absolutePath = path.resolve(
+  let absolutePath = path.resolve(
     path.dirname(Cypress.spec.absolute),
     "../../../module-tutorial/",
     dir
   );
+  // On Windows seen: '/C:/laragon/www/manual-examples/module-tutorial/step1_basic_module'
+  // remove the leading slash if followed by a drive letter
+  if (/^\/[A-Za-z]:/.test(absolutePath)) {
+    absolutePath = absolutePath.slice(1);
+  }
   cy.log(`**** absolutePath: '${absolutePath}'`);
 
   cy.doAdministratorLogin(Cypress.env("username"), Cypress.env("password"));

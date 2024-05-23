@@ -11,7 +11,7 @@ class Dispatcher implements DispatcherInterface
 {
     public function dispatch()
     {
-        $hello = "Hello";
+        $hello = 'Hello';
 
         require ModuleHelper::getLayoutPath('mod_hello');
     }

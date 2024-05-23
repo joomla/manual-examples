@@ -8,7 +8,7 @@ use Joomla\CMS\Factory;
 
 class HelloHelper
 {
-    public static function getLoggedonUsername(string $default)
+    public function getLoggedonUsername(string $default)
     {
         $user = Factory::getApplication()->getIdentity();
 

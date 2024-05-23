@@ -6,16 +6,15 @@ namespace My\Module\Hello\Site\Dispatcher;
 
 use Joomla\CMS\Dispatcher\DispatcherInterface;
 use Joomla\CMS\Helper\ModuleHelper;
-use Joomla\CMS\Helper\HelperFactoryAwareInterface;
-use Joomla\CMS\Helper\HelperFactoryAwareTrait;
+use My\Module\Hello\Site\Helper\HelloHelper;
 
-class Dispatcher implements DispatcherInterface, HelperFactoryAwareInterface
+class Dispatcher implements DispatcherInterface
 {
-    use HelperFactoryAwareTrait;
-
     public function dispatch()
     {
-        $hello = 'Hello ' . $this->getHelperFactory()->getHelper('HelloHelper')->getLoggedonUsername('Guest');
+        $username = HelloHelper::getLoggedonUsername('Guest');
+
+        $hello = "Hello {$username}";
 
         require ModuleHelper::getLayoutPath('mod_hello');
     }

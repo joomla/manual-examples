@@ -7,7 +7,7 @@
     <description>Code used in the Joomla module tutorial</description>
     <namespace path="src">My\Module\Hello</namespace>
     <files>
-        <filename module="mod_hello">mod_hello.php</filename>
+        <folder module="mod_hello">services</folder>
         <folder>src</folder>
         <folder>tmpl</folder>
     </files>

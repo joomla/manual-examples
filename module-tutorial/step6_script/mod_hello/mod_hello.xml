@@ -11,6 +11,7 @@
         <folder>src</folder>
         <folder>tmpl</folder>
     </files>
+    <scriptfile>script.php</scriptfile>
     <languages>
         <language tag="en-GB">language/en-GB/mod_hello.ini</language>
         <language tag="en-GB">language/en-GB/mod_hello.sys.ini</language>

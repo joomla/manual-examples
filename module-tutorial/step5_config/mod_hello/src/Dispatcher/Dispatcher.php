@@ -16,15 +16,18 @@ use My\Module\Hello\Site\Helper\HelloHelper;
 class Dispatcher implements DispatcherInterface
 {
     protected $module;
+    
+    protected $app;
 
     public function __construct(\stdClass $module, CMSApplicationInterface $app, Input $input)
     {
         $this->module = $module;
+        $this->app = $app;
     }
     
     public function dispatch()
     {
-        $language = Factory::getApplication()->getLanguage();
+        $language = $this->app->getLanguage();
         $language->load('mod_hello');
         
         $username = HelloHelper::getLoggedonUsername('Guest');

@@ -64,7 +64,10 @@ function uninstallExtensionIfExists(extensionName) {
     if (element.length > 0) {
       cy.log("**** extension to uninstall found");
       // do the uninstall job with joomla-cypress
-      cy.uninstallExtension(extensionName);
+      // cy.uninstallExtension(extensionName);
+      // overwrite uninstallExtension(), see support/commands.js
+      // can be changed back, if new NPM package is existing
+      cy.myUninstallExtension(extensionName);
     } else {
       cy.log("**** no extension to uninstall found");
     }
@@ -99,4 +102,9 @@ function checkWebsite(moduleName, text) {
   cy.log("---- checkWebsite ----");
 }
 
-module.exports = { installAndConfigure, uninstallExtensionIfExists, checkAdministratorBackend, checkWebsite };
+module.exports = {
+  installAndConfigure,
+  uninstallExtensionIfExists,
+  checkAdministratorBackend,
+  checkWebsite,
+};

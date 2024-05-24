@@ -14,6 +14,8 @@
 // ***********************************************************
 
 import "joomla-cypress";
+// only as long as new NPM package is available, see commands.js
+import './commands';
 
 // register joomla-cypress additonal commands
 before(function () {

@@ -1,4 +1,6 @@
+const fs = require("fs");
 const path = require("path");
+const { MODULES_DIRECTORY } = require("./constants");
 
 /**
  * Install module, publish it, display on all pages and place on `sidebar-right`.
@@ -38,7 +40,6 @@ function installAndConfigure(dir, moduleName) {
   cy.setModulePosition(moduleName, "sidebar-right");
   cy.log("---- installAndConfigure ----");
 }
-export { installAndConfigure };
 
 /**
  * If the extension is installed then uninstall it.
@@ -69,7 +70,6 @@ function uninstallExtensionIfExists(extensionName) {
     }
   });
 }
-export { uninstallExtensionIfExists };
 
 /**
  * Check module is installed in administrator backend.
@@ -84,7 +84,6 @@ function checkAdministratorBackend(moduleName) {
   cy.contains("a", moduleName).should("exist");
   cy.log("---- checkAdministratorBackend ----");
 }
-export { checkAdministratorBackend };
 
 /**
  * Check module output on frontend website.
@@ -99,4 +98,5 @@ function checkWebsite(moduleName, text) {
   cy.get(".card-body h4").should("contain.text", text);
   cy.log("---- checkWebsite ----");
 }
-export { checkWebsite };
+
+module.exports = { installAndConfigure, uninstallExtensionIfExists, checkAdministratorBackend, checkWebsite };

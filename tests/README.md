@@ -18,7 +18,7 @@ cd manual-examples/tests
 ```
 cp cypress.config.dist.js cypress.config.js
 ```
-4. Adjust the `baseURL`, `username` and `password` values in the `cypress.config.js` file.
+4. In the new Cypress configuration file `cypress.config.js` adjust the three values `joomlaBaseURL`, `joomlaAdminUserName` and `joomlaAdminUserPassword` if necessary.
 5. Install node modules:
 ```
 npm install

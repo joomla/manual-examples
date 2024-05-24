@@ -1,4 +1,4 @@
-import * as helper from "../support/helper";
+const helper = require("../support/helper");
 const {
   MODULE_NAME,
   MODULES_DIRECTORY,
@@ -9,7 +9,7 @@ describe(`Testing '${MODULE_NAME}' from '${MODULES_DIRECTORY}'`, () => {
   const testParameter = Cypress.env(STEP_PARAMETER);
   let testSteps = [];
   if (testParameter) {
-    testSteps = [ testParameter ];
+    testSteps = [testParameter];
   } else if (Cypress.env("steps") && Array.isArray(Cypress.env("steps"))) {
     testSteps = Cypress.env("steps");
   } else {

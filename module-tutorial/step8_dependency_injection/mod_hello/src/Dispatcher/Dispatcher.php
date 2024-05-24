@@ -10,10 +10,13 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
-use My\Module\Hello\Site\Helper\HelloHelper;
+use Joomla\CMS\Helper\HelperFactoryAwareInterface;
+use Joomla\CMS\Helper\HelperFactoryAwareTrait;
 
-class Dispatcher implements DispatcherInterface
+class Dispatcher implements DispatcherInterface, HelperFactoryAwareInterface
 {
+    use HelperFactoryAwareTrait;
+    
     protected $module;
     
     protected $app;
@@ -29,7 +32,7 @@ class Dispatcher implements DispatcherInterface
         $language = $this->app->getLanguage();
         $language->load('mod_hello');
         
-        $username = HelloHelper::getLoggedonUsername('Guest');
+        $username = $this->getHelperFactory()->getHelper('HelloHelper')->getLoggedonUsername('Guest');
 
         $hello = Text::_('MOD_HELLO_GREETING') . $username;
         

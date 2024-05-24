@@ -2,9 +2,9 @@
 
 All the Joomla developer manual tutorial samples (see [README.md](../README.md)) can be tested with web browser using Cypress.
 
-## Requirements and Configuration
+## Installation
 
-[Git](https://git-scm.com/), [Cypress](https://www.cypress.io//) and [npm](https://www.npmjs.com/) are required and must be installed. Also needed is a target Joomla installation with language `en-GB` for Joomla admin user.
+[Git](https://git-scm.com/), [Cypress](https://www.cypress.io//) and [npm](https://www.npmjs.com/) are required and must be installed. In addition, a target Joomla installation with the language en-GB for the Joomla admin user is required.
 
 1. Clone the repository
 ```
@@ -18,7 +18,7 @@ cd manual-examples/tests
 ```
 cp cypress.config.dist.js cypress.config.js
 ```
-4. In the new Cypress configuration file `cypress.config.js` adjust the three values `joomlaBaseURL`, `joomlaAdminUserName` and `joomlaAdminUserPassword` if necessary.
+4. In the file `cypress.config.js` adjust the three values `joomlaBaseURL`, `joomlaAdminUserName` and `joomlaAdminUserPassword` if necessary.
 5. Install node modules:
 ```
 npm install
@@ -50,13 +50,9 @@ npm run cypress:open -- --env test=step2_tmp_file
 
 After each test, the module is still installed and can also be checked manually.
 
-The tests are based on [joomla-cypress](https://github.com/joomla-projects/joomla-cypress/), in Cypress GUI mode you can see the log messages, e.g.:
-```
-log **** uninstallExtensionIfExists ****
-log **** extensionName: 'Joomla module tutorial'
-```
+## Logging
 
-To distinguish the log messages from automated tests form Joomla developer module tutorial are using `****`, e.g.:
+The tests are based on [joomla-cypress](https://github.com/joomla-projects/joomla-cypress/). In Cypress GUI mode you can see the log messages. The log messages created by this test are using `****`, e.g.:
 ```
 log **** installAndConfigure ****
 log **** directory: 'step1_basic_module'

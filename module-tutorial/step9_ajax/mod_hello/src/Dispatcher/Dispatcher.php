@@ -4,21 +4,40 @@ namespace My\Module\Hello\Site\Dispatcher;
 
 \defined('_JEXEC') or die;
 
-use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
+use Joomla\CMS\Dispatcher\DispatcherInterface;
+use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Application\CMSApplicationInterface;
+use Joomla\Input\Input;
+use Joomla\Registry\Registry;
 use Joomla\CMS\Helper\HelperFactoryAwareInterface;
 use Joomla\CMS\Helper\HelperFactoryAwareTrait;
-use Joomla\CMS\Language\Text;
 
-class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareInterface
+class Dispatcher implements DispatcherInterface, HelperFactoryAwareInterface
 {
     use HelperFactoryAwareTrait;
+    
+    protected $module;
+    
+    protected $app;
 
-    protected function getLayoutData(): array
+    public function __construct(\stdClass $module, CMSApplicationInterface $app, Input $input)
     {
-        $data = parent::getLayoutData();
+        $this->module = $module;
+        $this->app = $app;
+    }
+    
+    public function dispatch()
+    {
+        $language = $this->app->getLanguage();
+        $language->load('mod_hello');
+        
+        $username = $this->getHelperFactory()->getHelper('HelloHelper')->getLoggedonUsername('Guest');
 
-        $data['hello'] = Text::_('MOD_HELLO_GREETING') . $this->getHelperFactory()->getHelper('HelloHelper')->getLoggedonUsername('Guest');
+        $hello = Text::_('MOD_HELLO_GREETING') . $username;
+        
+        $params = new Registry($this->module->params);
 
-        return $data;
+        require ModuleHelper::getLayoutPath('mod_hello');
     }
 }

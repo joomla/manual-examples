@@ -3,10 +3,9 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Language\Text;
 
-$document = $app->getDocument();
+$document = $this->app->getDocument();
 $wa = $document->getWebAssetManager();
-$wr = $wa->getRegistry();
-$wr->addRegistryFile('media/mod_hello/joomla.asset.json');
+$wa->getRegistry()->addExtensionRegistryFile('mod_hello');
 $wa->useScript('mod_hello.add-suffix');
 
 // Pass the suffix to add down to js

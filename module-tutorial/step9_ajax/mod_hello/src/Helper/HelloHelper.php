@@ -21,7 +21,7 @@ class HelloHelper
 
         return $default;
     }
-
+    
     public function countAjax()
     {
         $user = Factory::getApplication()->getIdentity();

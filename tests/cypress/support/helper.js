@@ -1,6 +1,4 @@
-const fs = require("fs");
 const path = require("path");
-const { MODULES_DIRECTORY } = require("./constants");
 
 /**
  * Install module, publish it, display on all pages and place on `sidebar-right`.

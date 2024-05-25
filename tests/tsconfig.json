@@ -1,5 +1,5 @@
 {
-  // This exists file only here to prevent the warning about missing tsconfig.json
+  // This file only exists to prevent the warning about the missing 'tsconfig.json'.
   "compilerOptions": {
     "allowJs": true,
     "noEmit": true,

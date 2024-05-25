@@ -1,0 +1,9 @@
+{
+  // This exists file only here to prevent the warning about missing tsconfig.json
+  "compilerOptions": {
+    "allowJs": true,
+    "noEmit": true,
+    "baseUrl": "."
+  },
+  "include": []
+}

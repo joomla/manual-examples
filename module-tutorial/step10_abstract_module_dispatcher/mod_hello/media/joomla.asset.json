@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_hello",
+  "version": "1.0.0",
+  "description": "Joomla Module Tutorial",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "mod_hello.add-suffix",
+      "type": "script",
+      "uri": "mod_hello/add-suffix.js",
+      "dependencies": [
+        "core",
+        "messages"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "1.1.0"
+    } 
+  ]
+}

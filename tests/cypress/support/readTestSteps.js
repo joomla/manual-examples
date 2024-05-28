@@ -14,7 +14,7 @@ function readTestSteps() {
         return reject(err);
       }
 
-      // since we now have step10_update_server, sort the numbers so as not to start with 10
+      // Since we now have step10_update_server, sort the numbers so as not to start with 10
       files = files.sort((a, b) => {
         let numA = parseInt(a.match(/\d+/)[0]);
         let numB = parseInt(b.match(/\d+/)[0]);

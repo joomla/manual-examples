@@ -16,7 +16,7 @@ Cypress.Commands.add("myUninstallExtension", (extensionName) => {
   cy.get("#system-message-container .alert").should("not.exist");
 
   cy.get("#cb0").click();
-  // delete the extension
+  // Delete the extension
   cy.get("body").then(($body) => {
     if ($body.find("button.button-delete.btn.btn-danger").length > 0) {
       // Joomla 4: Click on the 'Uninstall' button directly

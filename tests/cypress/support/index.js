@@ -14,10 +14,10 @@
 // ***********************************************************
 
 import "joomla-cypress";
-// only as long as new NPM package is available, see commands.js
+// Only as long as new NPM package > 1.0.3 is available, see commands.js
 import './commands';
 
-// register joomla-cypress additonal commands
+// Register joomla-cypress additonal commands
 before(function () {
   const {
     registerCommands,

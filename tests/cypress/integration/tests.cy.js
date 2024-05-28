@@ -5,6 +5,10 @@ const {
   STEP_PARAMETER,
 } = require("../support/constants");
 
+/**
+ * This Cypress test takes all directory entries from `module-tutorial` and
+ * tests the installation and function of the Joomla module in the target Joomla.
+ */
 describe(`Testing '${MODULE_NAME}' from '${MODULES_DIRECTORY}'`, () => {
   const testParameter = Cypress.env(STEP_PARAMETER);
   let testSteps = [];
@@ -18,6 +22,7 @@ describe(`Testing '${MODULE_NAME}' from '${MODULES_DIRECTORY}'`, () => {
     });
   }
 
+  // Steps are all the `module-tutorial` directory entries or from `test` parameter.
   testSteps.forEach((step) => {
     describe(`Testing '${step}'`, () => {
       it("Uninstall extension, if existing", () => {

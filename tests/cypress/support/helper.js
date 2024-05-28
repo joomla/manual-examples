@@ -3,7 +3,7 @@ const path = require("path");
 /**
  * Install module, publish it, display on all pages and place on `sidebar-right`.
  *
- * using Cypress test name as module directory name
+ * Using Cypress test name as module directory name
  *
  * @param {string} dir module variant directory name, e.g. 'step1_basic_module'
  * @param {string} moduleName module name, e.g. 'Joomla Module Tutorial'
@@ -13,9 +13,9 @@ function installAndConfigure(dir, moduleName) {
   cy.log(`**** directory: '${dir}'`);
   cy.log(`**** moduleName: '${moduleName}'`);
 
-  /* create absolute path to the module to be installed from Cypress test file name
-   * e.g. from    /Users/hlu/Desktop/manual-examples/cypress/integration/step1_basic_module.cy.js
-   * absolutePath /Users/hlu/Desktop/manual-examples/module-tutorial/step1_basic_module
+  /* Create absolute path to the module to be installed from Cypress test file name.
+   *   e.g. from    /Users/hlu/Desktop/manual-examples/cypress/integration/step1_basic_module.cy.js
+   *   absolutePath /Users/hlu/Desktop/manual-examples/module-tutorial/step1_basic_module
    */
   let absolutePath = path.resolve(
     path.dirname(Cypress.spec.absolute),
@@ -23,7 +23,7 @@ function installAndConfigure(dir, moduleName) {
     dir
   );
   // On Windows seen: '/C:/laragon/www/manual-examples/module-tutorial/step1_basic_module'
-  // remove the leading slash if followed by a drive letter
+  // -> Remove the leading slash if followed by a drive letter.
   if (/^\/[A-Za-z]:/.test(absolutePath)) {
     absolutePath = absolutePath.slice(1);
   }
@@ -56,15 +56,15 @@ function uninstallExtensionIfExists(extensionName) {
 
   cy.get("#system-message-container .alert").should("not.exist");
 
-  // run without retrying, to check for '#cb0' existence
+  // Run without retrying, to check for '#cb0' existence
   cy.then(() => {
     const element = Cypress.$("#cb0");
     if (element.length > 0) {
       cy.log("**** extension to uninstall found");
-      // do the uninstall job with joomla-cypress
-      // cy.uninstallExtension(extensionName);
-      // overwrite uninstallExtension(), see support/commands.js
-      // can be changed back, if new NPM package is existing
+      // Do the uninstall job with joomla-cypress
+      // // cy.uninstallExtension(extensionName);
+      // // overwrite uninstallExtension(), see support/commands.js
+      // // can be changed back, if new NPM package is existing
       cy.myUninstallExtension(extensionName);
     } else {
       cy.log("**** no extension to uninstall found");

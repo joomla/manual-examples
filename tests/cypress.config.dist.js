@@ -1,5 +1,5 @@
-/* Copy this file as 'cypress.config.js' and
- * adjust the following three values if necessary.
+/* 
+ * Copy this file as 'cypress.config.js' and adjust the following three values if necessary.
  */
 const joomlaBaseURL = "http://localhost";
 const joomlaAdminUserName = "ci-admin";
@@ -19,7 +19,7 @@ module.exports = defineConfig({
     supportFile: "cypress/support/index.js",
     specPattern: ["cypress/integration/tests.cy.js"],
     setupNodeEvents(on, config) {
-      // reading test steps as entries from directory 'modules-tutorial'
+      // Reading test steps as entries from directory 'modules-tutorial'
       return readTestSteps()
         .then((files) => {
           config.env = config.env || {};

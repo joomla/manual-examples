@@ -3,7 +3,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Language\Text;
 
-$document = $this->app->getDocument();
+$document = $app->getDocument();
 $wa = $document->getWebAssetManager();
 $wa->getRegistry()->addExtensionRegistryFile('mod_hello');
 $wa->useScript('mod_hello.add-suffix');

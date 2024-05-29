@@ -1,0 +1,38 @@
+{
+  "name": "manual-examples",
+  "version": "0.0.1",
+  "description": "Automated Cypress tests for Joomla developer manual examples.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "eslint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joomla/manual-examples.git"
+  },
+  "keywords": [
+    "Joomla",
+    "Cypress",
+    "Module",
+    "Plugin"
+  ],
+  "author": "Joomla Project",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/joomla/manual-examples/issues"
+  },
+  "homepage": "https://github.com/joomla/manual-examples#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "cypress": "^13.9.0",
+    "joomla-cypress": "^1.0.3",
+    "eslint": "^9.3.0",
+    "@eslint/js": "^9.3.0"
+  }
+}

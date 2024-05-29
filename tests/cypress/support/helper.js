@@ -1,9 +1,11 @@
 const path = require("path");
+const { ZIP_FILE_NAME } = require("./constants");
 
 /**
  * Install module, publish it, display on all pages and place on `sidebar-right`.
  *
- * Using Cypress test name as module directory name
+ * Using Cypress test name as module directory name.
+ * Upload with ZIP file (and not install from a folder) to have the possibility to test with remote target Joomla.
  *
  * @param {string} dir module variant directory name, e.g. 'step1_basic_module'
  * @param {string} moduleName module name, e.g. 'Joomla Module Tutorial'
@@ -29,10 +31,20 @@ function installAndConfigure(dir, moduleName) {
   }
   cy.log(`**** absolutePath: '${absolutePath}'`);
 
-  cy.doAdministratorLogin(Cypress.env("username"), Cypress.env("password"));
+  // Create ZIP file
+  const zipFile = path.resolve(path.dirname(Cypress.spec.absolute), '../fixtures', ZIP_FILE_NAME);
+  cy.log(`**** zipFile: '${zipFile}'`);
+  cy.task("zipFolder", { source: absolutePath, out: zipFile }).then(
+    (result) => {
+      expect(result.success).to.be.true;
+    }
+  );
 
-  cy.log(`**** absolutePath: '${absolutePath}'`);
-  cy.installExtensionFromFolder(absolutePath);
+  cy.doAdministratorLogin(Cypress.env("username"), Cypress.env("password"));
+  // cy.installExtensionFromFileUpload({filePath: ZIP_FILE_NAME});
+  // // overwrite installExtensionFromFileUpload(), see support/commands.js
+  // // can be changed back, if new NPM package is existing
+  cy.myInstallExtensionFromFileUpload(ZIP_FILE_NAME);
   cy.publishModule(moduleName);
   cy.displayModuleOnAllPages(moduleName);
   cy.setModulePosition(moduleName, "sidebar-right");

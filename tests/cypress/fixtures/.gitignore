@@ -1,0 +1,4 @@
+# Use of 'fixtures/.gitignore' to ensure that this directory exists
+
+# Ignore created module ZIP file
+manual-examples.zip

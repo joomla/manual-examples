@@ -15,24 +15,15 @@ function installAndConfigure(dir, moduleName) {
   cy.log(`**** directory: '${dir}'`);
   cy.log(`**** moduleName: '${moduleName}'`);
 
-  /* Create absolute path to the module to be installed from Cypress test file name.
+  /* Construct the absolute path of the module to be installed from the name of the Cypress test file.
    *   e.g. from    /Users/hlu/Desktop/manual-examples/cypress/integration/step1_basic_module.cy.js
    *   absolutePath /Users/hlu/Desktop/manual-examples/module-tutorial/step1_basic_module
    */
-  let absolutePath = path.resolve(
-    path.dirname(Cypress.spec.absolute),
-    "../../../module-tutorial/",
-    dir
-  );
-  // On Windows seen: '/C:/laragon/www/manual-examples/module-tutorial/step1_basic_module'
-  // -> Remove the leading slash if followed by a drive letter.
-  if (/^\/[A-Za-z]:/.test(absolutePath)) {
-    absolutePath = absolutePath.slice(1);
-  }
+  let absolutePath = path.join(path.dirname(Cypress.spec.absolute), "../../../module-tutorial/", dir);
   cy.log(`**** absolutePath: '${absolutePath}'`);
 
-  // Create ZIP file
-  const zipFile = path.resolve(path.dirname(Cypress.spec.absolute), '../fixtures', ZIP_FILE_NAME);
+  // Create ZIP file in the 'fixtures' folder, as attachFile() expects the file there.
+  const zipFile = path.join(path.dirname(Cypress.spec.absolute), '../fixtures', ZIP_FILE_NAME);
   cy.log(`**** zipFile: '${zipFile}'`);
   cy.task("zipFolder", { source: absolutePath, out: zipFile }).then(
     (result) => {

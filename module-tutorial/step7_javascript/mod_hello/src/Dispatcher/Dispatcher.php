@@ -27,7 +27,7 @@ class Dispatcher implements DispatcherInterface
     public function dispatch()
     {
         $language = $this->app->getLanguage();
-        $language->load('mod_hello');
+        $language->load('mod_hello', JPATH_BASE . '/modules/mod_hello');
         
         $username = HelloHelper::getLoggedonUsername('Guest');
 

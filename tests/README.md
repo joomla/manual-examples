@@ -60,6 +60,8 @@ npx cypress open --env test=step2_tmpl_file
 
 :point_right: After each test, the module remains installed and can be inspected manually in the target Joomla.
 
+:point_right: In order to have the option of using a remote target Joomla, the plugin is installed as a ZIP file. You will find the most recently created ZIP archive in the `cypress/fixtures` folder.
+
 ## Logging
 
 In Cypress GUI mode, you can see the log messages. The log messages created by this test are using `****`, for example:

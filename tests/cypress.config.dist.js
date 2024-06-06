@@ -19,6 +19,9 @@ module.exports = defineConfig({
     supportFile: "cypress/support/index.js",
     specPattern: ["cypress/integration/tests.cy.js"],
     setupNodeEvents(on, config) {
+      // Importing tasks from cypress/plugins/index.js
+      require("./cypress/plugins")(on, config);
+
       // Reading test steps as entries from directory 'modules-tutorial'
       return readTestSteps()
         .then((files) => {

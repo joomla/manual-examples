@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" method="upgrade">
+
+    <name>com_exampleform</name>
+    <version>1.0.1</version>
+    <description>Component demonstrating use of forms and form fields</description>
+    <author>me</author>
+    <creationDate>today</creationDate>
+    <namespace path="src">My\Component\Exampleform</namespace>
+    
+    <administration>
+        <files folder="admin/">
+            <folder>services</folder>
+        </files>
+    </administration>
+
+    <files folder="site">
+        <folder>forms</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+    
+</extension>

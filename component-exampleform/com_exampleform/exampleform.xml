@@ -13,6 +13,11 @@
             <folder>services</folder>
         </files>
     </administration>
+    
+    <media destination="com_exampleform" folder="media">
+        <filename>joomla.asset.json</filename>
+        <folder>js</folder>
+    </media>
 
     <files folder="site">
         <folder>forms</folder>

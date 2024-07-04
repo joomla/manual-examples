@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_exampleform",
+  "version": "1.0.0",
+  "description": "Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "com_exampleform.validate-no-uppercase",
+      "type": "script",
+      "uri": "com_exampleform/no-uppercase.js",
+      "dependencies": [
+        "form.validate", "jquery"
+      ],
+      "attributes": {
+        "defer": true
+      },
+      "version": "1.0.0"
+    }
+  ]
+}

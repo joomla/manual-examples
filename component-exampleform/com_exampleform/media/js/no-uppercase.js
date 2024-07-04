@@ -1,4 +1,4 @@
-jQuery(function() {
+window.onload = (event) => {
     document.formvalidator.setHandler('noUppercase',
         function (value) {
             // look for any uppercase characters 
@@ -7,4 +7,4 @@ jQuery(function() {
             // ie, it has failed validation
             return !regex.test(value);
         });
-});
+};

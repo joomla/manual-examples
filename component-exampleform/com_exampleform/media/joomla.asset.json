@@ -10,7 +10,7 @@
       "type": "script",
       "uri": "com_exampleform/no-uppercase.js",
       "dependencies": [
-        "form.validate", "jquery"
+        "form.validate"
       ],
       "attributes": {
         "defer": true

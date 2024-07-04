@@ -6,9 +6,10 @@
             name="string1"
             type="text"
             label="String 1"
-            description="Enter a string. Only letters will get through the filter"
+            description="Enter a string. Only letters will get through the filter. Client validation will reject uppercase letters"
             size="40"
-            class="inputbox"
+            class="inputbox validate-noUppercase"
+            data-validation-text="Error: No uppercase letters are allowed"
             filter="lettersonly"
             required="true" />
         <field
@@ -22,14 +23,13 @@
             validate="noasterisk"
             required="true" />
         <fields name="details">
-            <fieldset name="detailsFieldset">
-                <field name="email" 
-                    type="email"
-                    label="Email"
-                    required="true"
-                    size="40"
-                    class="inputbox" />
-            </fieldset>
+            <field name="email" 
+                type="email"
+                label="Email"
+                required="true"
+                size="40"
+                description="This will be checked by client-side validation"
+                class="inputbox validate-email" />
             <field name="telephone" 
                 type="telephone"
                 label="Telephone number"

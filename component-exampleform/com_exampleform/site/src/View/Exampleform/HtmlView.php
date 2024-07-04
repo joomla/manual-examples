@@ -10,7 +10,7 @@ use Joomla\CMS\Factory;
 class HtmlView extends BaseHtmlView
 {
     public function display($tpl = null)
-	{
+    {
         $this->form = $this->getModel()->getForm();
         
         parent::display($tpl);

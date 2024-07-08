@@ -23,9 +23,9 @@ cd manual-examples/tests
 cp cypress.config.dist.js cypress.config.js
 ```
 4. In the file `cypress.config.js` adjust the three values `joomlaBaseURL`, `joomlaAdminUserName` and `joomlaAdminUserPassword` if necessary.
-5. Install node modules:
+5. Perform a clean installation of the project's dependencies:
 ```
-npm install
+npm ci
 ```
 
 ## Test Run
@@ -48,12 +48,12 @@ Run a test for one example only:
 npx cypress run --env test=step1_basic_module
 ```
 
-You can run Cypress with GUI to watch the web browser actions and see all the logging output:
+You can run Cypress with GUI to watch the web browser actions and to see all the logging output:
 ```
 npx cypress open
 ```
 
-And you can combine both by running a single example in the Cypress GUI:
+You can run a single example in the Cypress GUI:
 ```
 npx cypress open --env test=step2_tmpl_file
 ```

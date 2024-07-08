@@ -14,12 +14,10 @@
 // ***********************************************************
 
 import "joomla-cypress";
-// To have aatachFile() which is used in installExtensionFromFileUpload()
+// To have attachFile() which is used in installExtensionFromFileUpload()
 import 'cypress-file-upload';
-// Only as long as new NPM package > 1.0.3 is available, see commands.js
-import './commands';
 
-// Register joomla-cypress additonal commands
+// Register joomla-cypress additional commands
 before(function () {
   const {
     registerCommands,

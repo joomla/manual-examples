@@ -32,10 +32,7 @@ function installAndConfigure(dir, moduleName) {
   );
 
   cy.doAdministratorLogin(Cypress.env("username"), Cypress.env("password"));
-  // cy.installExtensionFromFileUpload({filePath: ZIP_FILE_NAME});
-  // // overwrite installExtensionFromFileUpload(), see support/commands.js
-  // // can be changed back, if new NPM package is existing
-  cy.myInstallExtensionFromFileUpload(ZIP_FILE_NAME);
+  cy.installExtensionFromFileUpload(ZIP_FILE_NAME);
   cy.publishModule(moduleName);
   cy.displayModuleOnAllPages(moduleName);
   cy.setModulePosition(moduleName, "sidebar-right");
@@ -64,11 +61,7 @@ function uninstallExtensionIfExists(extensionName) {
     const element = Cypress.$("#cb0");
     if (element.length > 0) {
       cy.log("**** extension to uninstall found");
-      // Do the uninstall job with joomla-cypress
-      // // cy.uninstallExtension(extensionName);
-      // // overwrite uninstallExtension(), see support/commands.js
-      // // can be changed back, if new NPM package is existing
-      cy.myUninstallExtension(extensionName);
+      cy.uninstallExtension(extensionName);
     } else {
       cy.log("**** no extension to uninstall found");
     }

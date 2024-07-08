@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form name="myFormName">
+    <fieldset name="mainFieldset" label="mainFieldsetLabel" description="mainFieldsetDescription">
+        <field
+            addfilterprefix="My\Component\Exampleform\Site\Filter"
+            name="string1"
+            type="text"
+            label="String 1"
+            description="Enter a string. Only letters will get through the filter. Client validation will reject uppercase letters"
+            size="40"
+            class="inputbox validate-noUppercase"
+            data-validation-text="Error: No uppercase letters are allowed"
+            filter="lettersonly"
+            required="true" />
+        <field
+            addruleprefix="My\Component\Exampleform\Site\Rule"
+            name="string2"
+            type="text"
+            label="String 2"
+            description="Enter a string. An asterisk * will fail validation"
+            size="40"
+            class="inputbox"
+            validate="noasterisk"
+            required="true" />
+        <fields name="details">
+            <field name="email" 
+                type="email"
+                label="Email"
+                required="true"
+                size="40"
+                description="This will be checked by client-side validation"
+                class="inputbox validate-email" />
+            <field name="telephone" 
+                type="telephone"
+                label="Telephone number"
+                required="true"
+                size="40"
+                class="inputbox"
+                validate="tel" />
+            <field 
+                addfieldprefix="My\Component\Exampleform\Site\Field"
+                name="time" 
+                type="mytime"
+                label="Enter time"
+                required="true"
+                class="inputbox" />
+        </fields>
+        <field 
+            name="radiofield" 
+            type="radio" 
+            default="1" >
+            <option value="1">No showon</option>
+            <option value="2">This must be selected for showon field</option>
+        </field>
+        <field 
+            name="textfield" 
+            type="text" 
+            label="Text field displayed using showon" 
+            showon="radiofield:2"/>
+    </fieldset>
+</form>

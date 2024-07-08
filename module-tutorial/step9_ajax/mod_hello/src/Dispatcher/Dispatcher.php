@@ -30,7 +30,7 @@ class Dispatcher implements DispatcherInterface, HelperFactoryAwareInterface
     public function dispatch()
     {
         $language = $this->app->getLanguage();
-        $language->load('mod_hello');
+        $language->load('mod_hello', JPATH_BASE . '/modules/mod_hello');
         
         $username = $this->getHelperFactory()->getHelper('HelloHelper')->getLoggedonUsername('Guest');
 

@@ -27,12 +27,12 @@
     "url": "https://github.com/joomla/manual-examples/issues"
   },
   "homepage": "https://github.com/joomla/manual-examples#readme",
-  "dependencies": {
-  },
   "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "archiver": "^7.0.1",
     "cypress": "^13.9.0",
-    "joomla-cypress": "^1.0.3",
+    "cypress-file-upload": "^5.0.8",
     "eslint": "^9.3.0",
-    "@eslint/js": "^9.3.0"
+    "joomla-cypress": "^1.0.3"
   }
 }

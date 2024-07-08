@@ -44,3 +44,33 @@ Cypress.Commands.add("myUninstallExtension", (extensionName) => {
 
   cy.log("--Uninstall an extension--");
 });
+
+/*
+ * This is a replacement for installExtensionFromFileUpload() from joomla-cypress
+ * as long as new NPM package is available with fix for
+ * https://github.com/joomla-projects/joomla-cypress/issues/17
+ */
+
+// Installs a Extension in Joomla using the file upload option
+Cypress.Commands.add("myInstallExtensionFromFileUpload", (file, type = "Extension") => {
+  cy.log("**** Install an extension from file upload ****");
+  cy.log("File: " + file);
+  cy.log("Type: " + type);
+
+  cy.visit("/administrator/index.php?option=com_installer");
+
+  cy.contains("Upload Package File").click();
+
+  // Wait until the element is available
+  cy.get('#legacy-uploader').should('exist').then(($uploader) => {
+    if ($uploader) {
+      cy.get('#legacy-uploader').invoke('removeClass', 'hidden');
+    }
+  });
+
+  cy.get("#install_package").attachFile(file);
+
+  cy.checkForSystemMessage("was successful");
+
+  cy.log("--Install an extension from file upload--");
+});

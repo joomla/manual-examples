@@ -1,7 +1,7 @@
 <?php
 namespace My\Component\Exampleform\Site\Rule;
 
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
 use Joomla\CMS\Form\FormRule;
 

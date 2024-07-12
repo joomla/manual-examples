@@ -30,7 +30,7 @@ npm ci
 
 ## Test Run
 
-Each example from the module-tutorial directory is tested with the following steps:
+Each example found in the module-tutorial directory is tested with the following steps:
 * Before each test, delete the module if it already exists.
 * Install the module, publish it, display it on all pages, and place it in the `sidebar-right`.
 * Verify that the module exists in the administrator backend view.
@@ -62,9 +62,18 @@ npx cypress open --env test=step2_tmpl_file
 
 :point_right: In order to have the option of using a remote target Joomla, the plugin is installed as a ZIP file. You will find the most recently created ZIP archive in the `cypress/fixtures` folder.
 
+## Display Console Messages
+
+Console messages in Cypress Test Runner from the Electron browser can be displayed in the JavaScript console
+of the Cypress GUI.
+If Cypress is executed headless, the console messages can be displayed by setting the environment variable `ELECTRON_ENABLE_LOGGING`:
+```
+ELECTRON_ENABLE_LOGGING=1 npx cypress run
+```
+
 ## Logging
 
-In Cypress GUI mode, you can see the log messages. The log messages created by this test are using `****`, for example:
+In Cypress GUI mode, you can see the log messages. The log messages created by Cypress `manual-examples` test are using `****`, for example:
 ```
 log **** installAndConfigure ****
 log **** directory: 'step1_basic_module'

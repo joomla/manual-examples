@@ -1,33 +1,16 @@
-// ***********************************************************
-// This example support/index.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
+// cypress/support/index.js – Loaded automatically before the test files
 
-import "joomla-cypress";
+// Register additional Cypress custom commands from npm module 'joomla-cypress'
+import { registerCommands } from "joomla-cypress";
 // To have attachFile() which is used in installExtensionFromFileUpload()
 import 'cypress-file-upload';
+registerCommands();
 
-// Register joomla-cypress additional commands
-before(function () {
-  const {
-    registerCommands,
-  } = require("../../node_modules/joomla-cypress/src/index.js");
-
-  registerCommands();
-
-  Cypress.on("uncaught:exception", (err, runnable) => {
-    console.log("err :" + err);
-    console.log("runnable :" + runnable);
-    return false;
-  });
+// Handle uncaught exceptions originating from Joomla to prevent tests from failing.
+// An example is "Uncaught TypeError: window.parent.jQuery is not a function".
+// You can see them in Cypress GUI JavaScript console or setting ELECTRON_ENABLE_LOGGING=1.
+Cypress.on("uncaught:exception", (err, runnable) => {
+  console.log("err :" + err);
+  console.log("runnable :" + runnable);
+  return false;
 });

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_ajaxdemo",
+  "version": "1.0.0",
+  "description": "Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "com_ajaxdemo.divide",
+      "type": "script",
+      "uri": "com_ajaxdemo/divide.js",
+      "dependencies": [
+        "messages", "jquery"
+      ],
+      "attributes": {
+        "defer": true
+      },
+      "version": "1.0.0"
+    }
+  ]
+}

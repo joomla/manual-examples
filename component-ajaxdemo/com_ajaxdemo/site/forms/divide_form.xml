@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form name="divide">
+    <field
+        name="a"
+        type="number"
+        label="A"
+        size="40"
+        required="true" />
+    <field
+        name="b"
+        type="number"
+        label="B"
+        size="40"
+        required="true" />
+    <field
+        name="answer"
+        type="text"
+        label="A/B"
+        size="40"
+        disabled="true" />
+</form>

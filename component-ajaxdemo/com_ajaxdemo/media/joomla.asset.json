@@ -10,7 +10,7 @@
       "type": "script",
       "uri": "com_ajaxdemo/divide.js",
       "dependencies": [
-        "messages", "jquery"
+        "messages"
       ],
       "attributes": {
         "defer": true

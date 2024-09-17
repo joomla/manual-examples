@@ -36,7 +36,7 @@ class AjaxdemoModel extends \Joomla\CMS\MVC\Model\FormModel
         // Check the session for previously entered form data.
         $data = Factory::getApplication()->getUserState(
             'com_ajaxdemo.divide',  // a unique name to identify the data in the session
-            array()                 // no pre-fill data otherwise
+            []                 // no pre-fill data otherwise
         );
 
         return $data;

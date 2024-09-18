@@ -5,21 +5,22 @@
     <version>1.0.1</version>
     <description>Component demonstrating use of forms and form fields</description>
     <author>me</author>
-    <creationDate>today</creationDate>
+    <creationDate>November 2024</creationDate>
+    <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
     <namespace path="src">My\Component\Exampleform</namespace>
     
     <administration>
-        <files folder="admin/">
+        <files folder="administrator/components/com_exampleform">
             <folder>services</folder>
         </files>
     </administration>
-    
-    <media destination="com_exampleform" folder="media">
+
+    <media destination="com_exampleform" folder="media/com_exampleform">
         <filename>joomla.asset.json</filename>
         <folder>js</folder>
     </media>
 
-    <files folder="site">
+    <files folder="components/com_exampleform">
         <folder>forms</folder>
         <folder>src</folder>
         <folder>tmpl</folder>

@@ -13,7 +13,6 @@ return new class () implements ServiceProviderInterface {
     public function register(Container $container): void
     {
         $container->registerServiceProvider(new ModuleDispatcherFactoryServiceProvider('\\My\\Module\\Hello'));
-        $container->registerServiceProvider(new HelperFactoryServiceProvider('\\My\\Module\\Hello\\Site\\Helper'));
         $container->registerServiceProvider(new ModuleServiceProvider());
     }
 };

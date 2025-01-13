@@ -63,7 +63,7 @@ class ExampleformController extends BaseController
             // would enqueue a success message and redirect to an appropriate page
             // Here instead we use the ExampleformReturn View to allow you to 
             // inspect the variables more easily
-            $view = $this->getView('ExampleformReturn', 'html');
+            $view = $this->getView('exampleformReturn', 'html');
             $view->setData($data, $validData);
             $view->display();
         }

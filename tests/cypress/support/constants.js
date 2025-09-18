@@ -1,4 +1,4 @@
-// All entries from 'modul-tutorial' directory are taken as test steps
+// All entries from 'module-tutorial' directory are taken as test steps
 const MODULES_DIRECTORY = "../module-tutorial";
 // Joomla module name - as defined in the to be tested modules
 const MODULE_NAME = "Joomla module tutorial";

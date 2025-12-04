@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>Joomla example table module</name>
+    <version>1.0.1</version>
+    <author>me</author>
+    <creationDate>today</creationDate>
+    <description>Demonstrates use of Table class APIs</description>
+    <namespace path="src">My\Module\TableExample</namespace>
+    <files>
+        <folder module="mod_table_example">services</folder>
+        <folder>src</folder>
+    </files>
+</extension>

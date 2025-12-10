@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension method="upgrade" type="plugin" group="content">
+    <name>PLG_CONTENT_SHORTCODES</name>
+    <version>1.0</version>
+    <description>PLG_CONTENT_SHORTCODES_DESCRIPTION</description>
+    <author>Me</author>
+	<creationDate>Today</creationDate>
+    <copyright>(C) 2024 Open Source Matters, Inc.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+    <namespace path="src">My\Plugin\Content\Shortcodes</namespace>
+    <files>
+		<folder plugin="shortcodes">services</folder>
+		<folder>src</folder>
+	</files>
+    <languages>
+		<language tag="en-GB">language/en-GB/plg_content_shortcodes.ini</language>
+		<language tag="en-GB">language/en-GB/plg_content_shortcodes.sys.ini</language>
+	</languages>
+</extension>

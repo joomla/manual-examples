@@ -10,7 +10,6 @@ class DisplayController extends BaseController {
     public function display($cachable = false, $urlparams = array())
     {
         $view = $this->getView('product', 'html');
-        $view->setDocument($this->app->getDocument());
         $view->display();
     }
 }

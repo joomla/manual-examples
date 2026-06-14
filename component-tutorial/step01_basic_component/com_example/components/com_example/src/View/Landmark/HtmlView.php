@@ -1,5 +1,5 @@
 <?php
-namespace My\Component\Example\Site\View\Product;
+namespace My\Component\Example\Site\View\Landmark;
  
 \defined('_JEXEC') or die;
 

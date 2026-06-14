@@ -9,7 +9,7 @@ class DisplayController extends BaseController {
 
     public function display($cachable = false, $urlparams = array())
     {
-        $view = $this->getView('product', 'html');
+        $view = $this->getView('landmark', 'html');
         $view->display();
     }
 }

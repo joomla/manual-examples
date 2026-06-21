@@ -13,14 +13,13 @@ class LandmarkModel extends ItemModel
         $app = Factory::getApplication();
         $input = $app->getInput();
         $id = $input->get('id', 0, 'INT');
-        switch ($id)
-            {
-                case 1:
-                    return "The Eiffel Tower";
-                case 2:
-                    return "The Giant's Causeway";
-                default:
-                    throw new \UnexpectedValueException("id out of range");
-            }
+        switch ($id) {
+            case 1:
+                return "The Eiffel Tower";
+            case 2:
+                return "The Giant's Causeway";
+            default:
+                throw new \UnexpectedValueException("id out of range");
+        }
     }
 }

@@ -20,8 +20,11 @@
     <administration>
         <files folder="administrator/components/com_example">
             <folder>services</folder>
-            <folder>language</folder>
         </files>
+        <languages folder="administrator/components/com_example/language">
+            <language tag="en-GB">en-GB/com_example.ini</language>
+            <language tag="en-GB">en-GB/com_example.sys.ini</language>
+        </languages>
     </administration>
 
 </extension>

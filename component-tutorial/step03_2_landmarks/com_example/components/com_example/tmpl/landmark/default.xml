@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_EXAMPLE_LANDMARK_MENUITEM_TITLE">
+        <message>COM_EXAMPLE_LANDMARK_MENUITEM_DESCRIPTION</message>
+    </layout>
+    <fields name="request">
+        <fieldset name="request">
+            <field
+                name="id"
+                type="list"
+                label="COM_EXAMPLE_LANDMARK_FIELD_SELECT_TITLE"
+                description="COM_EXAMPLE_LANDMARK_FIELD_SELECT_DESC"
+                >
+                    <option value="1">The Eiffel Tower</option>
+                    <option value="2">The Giant's Causeway</option>
+            </field>
+        </fieldset>
+    </fields>
+</metadata>

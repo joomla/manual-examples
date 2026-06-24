@@ -4,11 +4,11 @@ namespace My\Component\Example\Administrator\Table;
 \defined('_JEXEC') or die;
 
 use Joomla\CMS\Table\Table;
-use Joomla\Database\DatabaseDriver;
+use Joomla\Database\DatabaseInterface;
 
 class LandmarkTable extends Table
 {
-    public function __construct(DatabaseDriver $db)
+    public function __construct(DatabaseInterface $db)
     {
         parent::__construct('#__landmark', 'id', $db);
     }

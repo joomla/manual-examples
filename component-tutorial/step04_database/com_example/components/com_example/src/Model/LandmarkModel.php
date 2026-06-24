@@ -14,7 +14,7 @@ class LandmarkModel extends ItemModel
         $input = $app->getInput();
         $id = $input->get('id', 0, 'INT');
 
-        $table = $this->getTable('landmark', 'administrator');
+        $table = $this->getTable('Landmark', 'Administrator');
         $result = $table->load($id);
         if ($result) {
             return $table->title;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_EXAMPLE_LANDMARK_MENUITEM_TITLE">
+        <message>COM_EXAMPLE_LANDMARK_MENUITEM_DESCRIPTION</message>
+    </layout>
+    <fields name="request">
+        <fieldset name="request">
+            <field
+                name="id"
+                type="sql"
+                label="COM_EXAMPLE_LANDMARK_FIELD_SELECT_TITLE"
+                description="COM_EXAMPLE_LANDMARK_FIELD_SELECT_DESC"
+                query="SELECT id, title FROM #__example_landmarks"
+                key_field="id"
+                value_field="title"
+                >
+            </field>
+        </fieldset>
+    </fields>
+</metadata>

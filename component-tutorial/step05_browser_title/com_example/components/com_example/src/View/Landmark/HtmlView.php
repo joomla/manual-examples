@@ -1,0 +1,18 @@
+<?php
+namespace My\Component\Example\Site\View\Landmark;
+ 
+\defined('_JEXEC') or die;
+
+use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
+
+class HtmlView extends BaseHtmlView 
+{
+    function display($tpl = null)
+    {
+        $this->data = $this->getModel()->getItem();
+        parent::display($tpl);
+
+        $document = $this->getDocument();
+        $document->setTitle($this->data);
+    }
+}

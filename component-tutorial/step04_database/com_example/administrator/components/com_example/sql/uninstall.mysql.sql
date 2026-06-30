@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS `#__landmarks`;
+DROP TABLE IF EXISTS `#__example_landmarks`;

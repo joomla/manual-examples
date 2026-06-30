@@ -10,7 +10,7 @@
                 type="sql"
                 label="COM_EXAMPLE_LANDMARK_FIELD_SELECT_TITLE"
                 description="COM_EXAMPLE_LANDMARK_FIELD_SELECT_DESC"
-                query="SELECT id, title FROM #__landmarks"
+                query="SELECT id, title FROM #__example_landmarks"
                 key_field="id"
                 value_field="title"
                 >

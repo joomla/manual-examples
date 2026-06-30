@@ -10,6 +10,6 @@ class LandmarkTable extends Table
 {
     public function __construct(DatabaseInterface $db)
     {
-        parent::__construct('#__landmarks', 'id', $db);
+        parent::__construct('#__example_landmarks', 'id', $db);
     }
 }

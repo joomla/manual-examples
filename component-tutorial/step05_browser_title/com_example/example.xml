@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" method="upgrade">
+
+    <name>COM_EXAMPLE_TITLE</name>
+    <creationDate>today</creationDate>
+    <author>me</author>
+    <license>GPL v3</license>
+    <version>0.5.0</version>
+    <description>COM_EXAMPLE_DESCRIPTION</description>
+
+    <element>com_example</element>
+
+    <namespace path="src">My\Component\Example</namespace>
+
+    <files folder="components/com_example">
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+
+    <administration>
+        <files folder="administrator/components/com_example">
+            <folder>services</folder>
+            <folder>sql</folder>
+            <folder>src</folder>
+        </files>
+        <languages folder="administrator/components/com_example/language">
+            <language tag="en-GB">en-GB/com_example.ini</language>
+            <language tag="en-GB">en-GB/com_example.sys.ini</language>
+        </languages>
+    </administration>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
+        </sql>
+    </install>
+
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>
+        </sql>
+    </uninstall>
+    
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+</extension>

@@ -6,7 +6,7 @@
 <?php 
     $picture = json_decode($this->data->picture);
     $src = $picture->imagefile;
-    $altText = $picture->alt_text;
+    $altText = $this->escape($picture->alt_text);
     echo "<img src={$src} alt='{$altText}'>";
 ?>
 <p><?php echo $this->data->description;?></p>

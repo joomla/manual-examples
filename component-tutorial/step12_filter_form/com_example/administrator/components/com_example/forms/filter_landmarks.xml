@@ -30,8 +30,8 @@
             validate="options"
             >
             <option value="">JGLOBAL_SORT_BY</option>
-            <option value="title ASC">JGLOBAL_TITLE_ASC</option>
-            <option value="title DESC">JGLOBAL_TITLE_DESC</option>
+            <option value="title ASC">COM_EXAMPLE_LANDMARK_TITLE_ASCENDING</option>
+            <option value="title DESC">COM_EXAMPLE_LANDMARK_TITLE_DESCENDING</option>
             <option value="id ASC">JGRID_HEADING_ID_ASC</option>
             <option value="id DESC">JGRID_HEADING_ID_DESC</option>
         </field>

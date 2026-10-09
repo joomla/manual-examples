@@ -25,7 +25,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
                     <?php echo HTMLHelper::_('grid.checkall'); ?>
                 </td>
                 <th scope="col">
-                    <?php echo HTMLHelper::_('searchtools.sort', 'JGLOBAL_TITLE', 'title', $listDirn, $listOrder); ?>
+                    <?php echo HTMLHelper::_('searchtools.sort', 'COM_EXAMPLE_LANDMARK_TITLE_LABEL', 'title', $listDirn, $listOrder); ?>
                 </th>
                 <th scope="col" class="w-1 text-center">
                     <?php echo Text::_('JSTATUS'); ?>

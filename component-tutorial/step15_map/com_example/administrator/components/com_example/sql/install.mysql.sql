@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS `#__example_landmarks` (
+    `id`        INT(11)     NOT NULL AUTO_INCREMENT,
+    `title`     VARCHAR(40) NOT NULL,
+    `description` TEXT      NOT NULL,
+    `published` TINYINT(4)  NOT NULL DEFAULT 1,
+    `picture`   TEXT        NOT NULL,
+    `location`  TEXT        NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+INSERT INTO `#__example_landmarks` (`title`, `description`, `published`, `picture`) VALUES
+('The Eiffel Tower', '', 1, '', '{"lat":"48.858222","long":"2.2945"}'),
+('The Giant\'s Causeway', '', 1, '', '{"lat":"55.240833","long":"-6.511667"}');

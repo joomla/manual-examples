@@ -8,6 +8,6 @@ CREATE TABLE IF NOT EXISTS `#__example_landmarks` (
     PRIMARY KEY (`id`)
 );
 
-INSERT INTO `#__example_landmarks` (`title`, `description`, `published`, `picture`) VALUES
+INSERT INTO `#__example_landmarks` (`title`, `description`, `published`, `picture`, `location`) VALUES
 ('The Eiffel Tower', '', 1, '', '{"lat":"48.858222","long":"2.2945"}'),
 ('The Giant\'s Causeway', '', 1, '', '{"lat":"55.240833","long":"-6.511667"}');

@@ -35,7 +35,7 @@ class LandmarkModel extends AdminModel
         if (empty($data))
         {
             $data = $this->getItem();
-            $data->location = json_decode($data->location);  // will be set to null if location not yet set
+            $data->location = $data->location ? json_decode($data->location) : null;  
         }
 
         return $data;

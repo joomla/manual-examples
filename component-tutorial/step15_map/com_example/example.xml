@@ -57,7 +57,7 @@
         </schemas>
     </update>
 
-    <media folder="media/com_example">
+    <media destination="com_example" folder="media/com_example">
         <filename>joomla.asset.json</filename>
         <folder>css</folder>
         <folder>js</folder>

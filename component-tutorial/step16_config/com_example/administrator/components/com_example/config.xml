@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset
+        name="display"
+        label="COM_EXAMPLE_CONFIG_DISPLAY_SETTINGS_LABEL"
+        description="COM_EXAMPLE_CONFIG_DISPLAY_SETTINGS_DESC"
+        >
+        <field
+            name="zoom"
+            type="integer"
+            label="COM_EXAMPLE_CONFIG_DEFAULT_ZOOM_LABEL"
+            description="COM_EXAMPLE_CONFIG_DEFAULT_ZOOM_DESC"
+            first="0"
+            last="20"
+            step="1"
+        />
+    </fieldset>
+</config>

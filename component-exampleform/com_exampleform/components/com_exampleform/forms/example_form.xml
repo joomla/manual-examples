@@ -8,7 +8,7 @@
             label="String 1"
             description="Enter a string. Only letters will get through the filter. Client validation will reject uppercase letters"
             size="40"
-            class="inputbox validate-noUppercase"
+            class="validate-noUppercase"
             data-validation-text="Error: No uppercase letters are allowed"
             filter="lettersonly"
             required="true" />
@@ -19,7 +19,6 @@
             label="String 2"
             description="Enter a string. An asterisk * will fail validation"
             size="40"
-            class="inputbox"
             validate="noasterisk"
             required="true" />
         <fields name="details">
@@ -29,13 +28,12 @@
                 required="true"
                 size="40"
                 description="This will be checked by client-side validation"
-                class="inputbox validate-email" />
+                class="validate-email" />
             <field name="telephone" 
                 type="telephone"
                 label="Telephone number"
                 required="true"
                 size="40"
-                class="inputbox"
                 validate="tel" />
             <field 
                 addfieldprefix="My\Component\Exampleform\Site\Field"
@@ -43,7 +41,7 @@
                 type="mytime"
                 label="Enter time"
                 required="true"
-                class="inputbox" />
+                />
         </fields>
         <field 
             name="radiofield" 

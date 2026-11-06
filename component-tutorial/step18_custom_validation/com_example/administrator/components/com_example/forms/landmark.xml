@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form> 
+    <field
+            name="title"
+            type="text"
+            label="COM_EXAMPLE_LANDMARK_TITLE_LABEL"
+            description="COM_EXAMPLE_LANDMARK_TITLE_DESC"
+            required="true"
+            maxlength="40"
+            validate="regex"
+            validate_regex="^.{2,40}$" 
+            message="COM_EXAMPLE_INVALID_TITLE" 
+            default=""
+            />
+    <field  name="description" 
+            type="editor"
+            label="COM_EXAMPLE_LANDMARK_DESCRIPTION_LABEL" 
+            description="COM_EXAMPLE_LANDMARK_DESCRIPTION_DESC"
+            filter="\Joomla\CMS\Component\ComponentHelper::filterText" 
+            buttons="true" 
+            />
+    <field
+            name="published"
+            type="list"
+            label="JSTATUS"
+            default="1"
+            validate="options"
+            >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="-2">JTRASHED</option>
+    </field>
+    <fieldset name="details">
+        <field
+                name="picture"
+                label="COM_EXAMPLE_LANDMARK_PICTURE_LABEL"
+                description="COM_EXAMPLE_LANDMARK_PICTURE_DESC"
+                type="accessiblemedia"
+                />
+        <fields name="location">
+            <field
+                name="lat"
+                label="COM_EXAMPLE_LANDMARK_LATITUDE_LABEL"
+                description="COM_EXAMPLE_LANDMARK_LATITUDE_DESC"
+                type="number"
+                filter="float"
+                validate="number"
+                min="-90"
+                max="90"
+                message="COM_EXAMPLE_INVALID_LATITUDE"
+                class="validate-plusMinus90"
+                data-validation-text="Error: Latitude must be between -90 and 90"
+                />
+            <field
+                name="long"
+                label="COM_EXAMPLE_LANDMARK_LONGITUDE_LABEL"
+                description="COM_EXAMPLE_LANDMARK_LONGITUDE_DESC"
+                type="number"
+                filter="float"
+                validate="number"
+                min="-180"
+                max="180"
+                message="COM_EXAMPLE_INVALID_LONGITUDE"
+                class="validate-plusMinus180"
+                data-validation-text="Error: Longitude must be between -180 and 180"
+                />
+        </fields>
+        <fields name="params">
+            <field 
+                name="zoom"
+                label="COM_EXAMPLE_LANDMARK_ZOOM_LABEL"
+                description="COM_EXAMPLE_LANDMARK_ZOOM_DESC"
+                type="integer"
+                filter="integer"
+                first="0"
+                last="20"
+                step="1"
+                validate="number"
+                min="0"
+                max="20"
+                useglobal="true"
+                />
+        </fields>
+        <field
+                name="reference"
+                type="text"
+                label="COM_EXAMPLE_LANDMARK_REFERENCE_LABEL"
+                description="COM_EXAMPLE_LANDMARK_REFERENCE_DESC"
+                addruleprefix="My\Component\Example\Administrator\Rule"
+                validate="reference"
+                />
+        <field
+                name="id"
+                type="text"
+                label="JGLOBAL_FIELD_ID_LABEL"
+                class="readonly"
+                default="0"
+                readonly="true"
+                />    
+    </fieldset>
+</form>
